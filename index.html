@@ -16,11 +16,11 @@
     <nav>
         <div class="flex-container">
             <h3 class="left-align"><a href="url">View high scores</a></h3>    
-            <h3 class="right-align" class="time" id="countdown">Time: </h3>
+            <h3 class="right-align" class="time" id="countdown">Timer: <span id="time">0</span></h3>
         </div>
     </nav>
     <main>
-        <div class="visible">
+        <div class="show">
             <h3>Plant Quiz Challenge</h3>
             <p>Answer as many plant questions as possible within 60 seconds. Remember wrong answers will deduct 10
                 seconds from your time</p>
@@ -28,8 +28,8 @@
         </div>
     </main>
     <!-- hidden elements: time, questions, answer button, input feild (Congrats! you got x-number right, your name here), losses, wins-->
-    <section class="hide">
-        <div class="questions">
+    <section class="box" data-block="question-block">
+        <div class="questions" class="hide">
             <p></p>
         </div>
         <div class="answers">
@@ -43,6 +43,12 @@
         <div>
             <p class="correctAnswers"></p>
         </div>
+        <div class="card">
+            <h2>Good job! Your final score is x-number></h2>
+            <h2>Enter your initals:</h2>
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+            <p><strong>Password:</strong> <span id="user-password"></span></p>
+          </div>
     </section>
     <script src="./assets/js/script.js"></script>
 </body>

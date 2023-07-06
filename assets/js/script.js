@@ -25,7 +25,21 @@ function setTime() {
     }, 1000);
 }
 
+// this will show the last input in the form //
+renderLastregistered();
 
+// to store more than one set of values in the local storage
+// have an array
+// make array a string - JASON.stringify()
+// save to local storage
+// to get the value back --
+// get array from storage - JASON.parse()
+
+// when the submit button is clicked to submit the final score and initals // 
+sumbitButton.addEventListner("click", function(event))
+
+// to keep the list of names and scores have an empty var that passes through the key and value pair for each name and score
+var listOfHighScores[]
 
 var questionElement = document.getElementById("questions")
 
