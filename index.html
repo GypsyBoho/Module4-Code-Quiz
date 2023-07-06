@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stephanie's Coding Quiz Challenge</title>
+    <title>Coding Quiz Challenge | Start Page</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-    
+    <!-- Things in here we will show and hide depending on which page it is -->
+
+    <!-- visibile elements: Start button, welcom, text -->
+    <!-- nav bar w/ high score link and timer -->
+    <nav>
+        <div class="flex-container" class="visible">
+            <div><h3><a href="url">View high scores</a></h3></div>
+            <div><h3 id="countdown">Time: </h3></div>
+        </div>
+    </nav>
+    <main>
+        <div class="visible">
+            <h3>Plant Quiz Challenge</h3>
+            <p>Answer as many plant questions as possible within 60 seconds. Remember wrong answers will deduct 10
+                seconds from your time</p>
+            <div class="start-btn"><button>Start Quiz</button></div>
+        </div>
+    </main>
+    <!-- hidden elements: time, questions, answer button, input feild (Congrats! you got x-number right, your name here), losses, wins-->
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
+
