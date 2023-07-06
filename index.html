@@ -14,9 +14,9 @@
     <!-- visibile elements: Start button, welcom, text -->
     <!-- nav bar w/ high score link and timer -->
     <nav>
-        <div class="flex-container" class="visible">
-            <div><h3><a href="url">View high scores</a></h3></div>
-            <div><h3 id="countdown">Time: </h3></div>
+        <div class="flex-container">
+            <h3 class="left-align"><a href="url">View high scores</a></h3>    
+            <h3 class="right-align" id="countdown">Time: </h3>
         </div>
     </nav>
     <main>
@@ -28,12 +28,12 @@
         </div>
     </main>
     <!-- hidden elements: time, questions, answer button, input feild (Congrats! you got x-number right, your name here), losses, wins-->
-    <section>
+    <section class="hide">
         <div class="questions">
             <p></p>
         </div>
-        <div>
-            <ol class="answers">
+        <div class="answers">
+            <ol>
                 <li></li>
                 <li></li>
                 <li></li>
