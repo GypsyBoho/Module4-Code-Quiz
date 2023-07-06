@@ -35,3 +35,12 @@ div.flex-container {
     justify-content: center;
     align-items: center;
 }
+
+/* hide and show class for elements such as questions, start button, final score, enter initals, submit button */
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}

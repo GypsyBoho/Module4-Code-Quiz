@@ -15,9 +15,11 @@ var score = 0;
 var timeLeft = 60;
 var timerInterval;
 
+var questionElement = document.getElementById("questions")
+
 // array/pool of questions - var currentQuestions = ["arry of questions",]
 var currentQuestion = [
-    "What is the process by which plants convert light energy into chemical energy?", 
+    "What is the process by which plants convert light into energy?", 
     "Which of the following is not a type of plant tissue?", 
     "Which plant hormone is responsible for promoting cell elongation and growth?", 
     "Which part of the plant is responsible for absorbing water and minerals from the soil?",
@@ -36,20 +38,28 @@ var answers = [
     ['a) Pollination', 'b) Fertilization', 'c) Germination']
 ];
 
-// answers[2] // ["9", "8", "7", "6"]
-// answer[2][3] // "6"
 // Store correct answers in a new array var correctAnswers = ["4", "8"]
+var correctAnswers = [
+    "a) Photosynthesis",
+    "c) Mitochondria",
+    "a) Gibberellins",
+    "a) Roots",
+    "b) Epidermi",
+    "a) Venus flytrap",
+    "a) Pollination"
 
-// function
+]
 
-// function startGame () {
+// functions
+
+function startGame () {
     // initalize the game 
     // - start button hides
     // - welcome text disapear 
     // - time appears/starts
     // - text for first question appears
     // - options for question shows
-// }
+}
 
 // function timer() {
     // set internal interval - look through activites
