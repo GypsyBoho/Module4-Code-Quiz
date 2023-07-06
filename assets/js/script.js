@@ -12,8 +12,20 @@ var currentQuestionIndex = 0;
 var score = 0;
 
 // store time - var timeLeft = 300
+var timeEl = document.querySelector(".time")
+
+var countdownEl = document.getElementById("countdown")
+
 var timeLeft = 60;
-var timerInterval;
+
+function setTime() {
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeEl.textContent = secodnsLeft;
+    }, 1000);
+}
+
+
 
 var questionElement = document.getElementById("questions")
 
