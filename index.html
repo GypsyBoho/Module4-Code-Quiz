@@ -15,43 +15,35 @@
     <!-- nav bar w/ high score link and timer -->
     <nav>
         <div class="flex-container">
-            <h3 class="left-align"><a href="url">View high scores</a></h3>    
+            <h3 class="left-align"><a href="url">View high scores</a></h3>
             <h3 class="right-align" class="time" id="countdown">Timer: <span id="time">0</span></h3>
         </div>
     </nav>
     <main>
-        <div class="show">
+        <section id="start-page">
             <h3>Plant Quiz Challenge</h3>
             <p>Answer as many plant questions as possible within 60 seconds. Remember wrong answers will deduct 10
                 seconds from your time</p>
-            <div class="start-btn"><button>Start Quiz</button></div>
-        </div>
+            <div class="start-btn"><button id="start">Start Quiz</button></div>
+        </section>
+
+        <!-- hidden elements: time, questions, answer button, input feild (Congrats! you got x-number right, your name here), losses, wins-->
+        <section id="questions-page" class="hide">
+            <h4 class="questions">Test</h4>
+            <div class="answers"></div>
+            <div>
+                <p class="correctAnswers"></p>
+            </div>
+        </section>
+        <section id="finish-page" class="hide">
+            <div class="card">
+                <h2>Good job! Your final score is x-number></h2>
+                <h2>Enter your initals:</h2>
+                <p><strong>Initals</strong> <span id="user-email"></span></p>
+            </div>
+        </section>
+        <script src="./assets/js/script.js"></script>
     </main>
-    <!-- hidden elements: time, questions, answer button, input feild (Congrats! you got x-number right, your name here), losses, wins-->
-    <section class="box" data-block="question-block">
-        <div class="questions" class="hide">
-            <p></p>
-        </div>
-        <div class="answers">
-            <ol>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ol>
-        </div>
-        <div>
-            <p class="correctAnswers"></p>
-        </div>
-        <div class="card">
-            <h2>Good job! Your final score is x-number></h2>
-            <h2>Enter your initals:</h2>
-            <p><strong>Email:</strong> <span id="user-email"></span></p>
-            <p><strong>Password:</strong> <span id="user-password"></span></p>
-          </div>
-    </section>
-    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
-
