@@ -29,8 +29,11 @@
 
         <!-- hidden elements: time, questions, answer button, input feild (Congrats! you got x-number right, your name here), losses, wins-->
         <section id="questions-page" class="hide">
-            <h4 class="questions">Test</h4>
-            <div class="answers"></div>
+            <h4 id="questions" class="questions"></h4>
+            <button id="choice1"></button>
+            <button id="choice2"></button>
+            <button id="choice3"></button>
+            <div id="choices"class="answers"></div>
             <div>
                 <p class="correctAnswers"></p>
             </div>
@@ -39,7 +42,7 @@
             <div class="card">
                 <h2>Good job! Your final score is x-number></h2>
                 <h2>Enter your initals:</h2>
-                <p><strong>Initals</strong> <span id="user-email"></span></p>
+                <p><strong>Initals</strong> <span id="user-initals"></span></p>
             </div>
         </section>
         <script src="./assets/js/script.js"></script>

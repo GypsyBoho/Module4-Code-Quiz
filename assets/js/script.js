@@ -6,14 +6,20 @@
 var startButton = document.querySelector("#start")
 var startPage = document.querySelector("#start-page")
 var questionsPage = document.querySelector("#questions-page")
+var finishPage = document.querySelector("#finsh-page")
 var questionElement = document.getElementById("questions")
 var timeEl = document.querySelector("#time")
 var countdownEl = document.getElementById("countdown")
+var choicesEl = document.getElementById("choices")
+var choice1 = document.getElementById("choice1")
+var choice2 = document.getElementById("choice2")
+var choice3 = document.getElementById("choice3")
 
 // Global variables //
 // question number - current question
 var currentQuestionIndex = 0;
 var score = 0;
+
 
 // store time - var timeLeft = 300
 var timeLeft = 60;
@@ -27,17 +33,18 @@ var timerInterval;
 
 // to store more than one set of values in the local storage
 // have an array
-// make array a string - JASON.stringify()
+// make array a string - JSON.stringify()
 // save to local storage
 // to get the value back --
-// get array from storage - JASON.parse()
+// get array from storage - JSON.parse()
 
 
 
 // to keep the list of names and scores have an empty var that passes through the key and value pair for each name and score
 
 
-// array/pool of questions - var currentQuestions = ["arry of questions",]
+// I combined all of the arrays for question, choices and answers into one variable
+
 var questions = [
     {
         question: "What is the process by which plants convert light into energy?",
@@ -46,76 +53,45 @@ var questions = [
 
     },
     {
-        question: "What is the process by which plants convert light into energy?",
-        choices: ["Photosynthesis", "Respiration", "Germination"],
-        correctAnswers: "Photosynthesis"
+        question: "Which of the following is not a type of plant tissue?",
+        choices: ["Epidermis'", "Xylem", "Mitochondria"],
+        correctAnswers: "Mitochondria"
     },
     {
-        question: "What is the process by which plants convert light into energy?",
-        choices: ["Photosynthesis", "Respiration", "Germination"],
-        correctAnswers: "Photosynthesis"
+        question: "Which plant hormone is responsible for promoting cell elongation and growth?",
+        choices: ["Gibberellins", "Ethylene", "Abscisic acid"],
+        correctAnswers: "Gibberellins"
     },
     {
-        question: "What is the process by which plants convert light into energy?",
-        choices: ["Photosynthesis", "Respiration", "Germination"],
-        correctAnswers: "Photosynthesis"
+        question: "Which part of the plant is responsible for absorbing water and minerals from the soil?",
+        choices: ["Roots", "Leaves", "Flowers"],
+        correctAnswers: "Roots"
     },
     {
-        question: "What is the process by which plants convert light into energy?",
-        choices: ["Photosynthesis", "Respiration", "Germination"],
-        correctAnswers: "Photosynthesis"
+        question: "What is the outermost layer of a leaf called?",
+        choices: ["Cuticle", "Epidermis", "Mesophyll"],
+        correctAnswers: "Epidermis"
     },
     {
-        question: "What is the process by which plants convert light into energy?",
-        choices: ["Photosynthesis", "Respiration", "Germination"],
-        correctAnswers: "Photosynthesis"
+        question: "Which of the following is a carnivorous plant?",
+        choices: ["Venus flytrap", "Sunflower", "Cactus"],
+        correctAnswers: "Venus flytrap"
     },
     {
-        question: "What is the process by which plants convert light into energy?",
-        choices: ["Photosynthesis", "Respiration", "Germination"],
-        correctAnswers: "Photosynthesis"
+        question: "What is the process of pollen transfer from the anther to the stigma called?",
+        choices: ["Pollination", "Fertilization", "Germination"],
+        correctAnswers: "Pollination"
     },
     
-
 ]
-var currentQuestion = [
-    "What is the process by which plants convert light into energy?",
-    "Which of the following is not a type of plant tissue?",
-    "Which plant hormone is responsible for promoting cell elongation and growth?",
-    "Which part of the plant is responsible for absorbing water and minerals from the soil?",
-    "What is the outermost layer of a leaf called?",
-    "Which of the following is a carnivorous plant?",
-    "What is the process of pollen transfer from the anther to the stigma called?"
-]
-// arry of answers - varAnswers = ["[4", "5", "6", "7"], ["9", "8", "7", "16"], ["11", "12", "16", "17"], ["24", "25", "26", "27"]]
-var answers = [
-    ['a) Photosynthesis', 'b) Respiration', 'c) Germination'],
-    ['a) Epidermis', 'b) Xylem', 'c) Mitochondria'],
-    ['a) Gibberellins', 'b) Ethylene', 'c) Abscisic acid'],
-    ['a) Roots', 'b) Leaves', 'c) Flowers'],
-    ['a) Cuticle', 'b) Epidermis', 'c) Mesophyll'],
-    ['a) Venus flytrap', 'b) Sunflower', 'c) Cactus'],
-    ['a) Pollination', 'b) Fertilization', 'c) Germination']
-];
-
-// Store correct answers in a new array var correctAnswers = ["4", "8"]
-var correctAnswers = [
-    "a) Photosynthesis",
-    "c) Mitochondria",
-    "a) Gibberellins",
-    "a) Roots",
-    "b) Epidermi",
-    "a) Venus flytrap",
-    "a) Pollination"
-
-]
-
 // functions
 
 function startGame() {
     startPage.classList.add("hide");
     questionsPage.classList.remove("hide");
     setTime();
+    questionElement.textContent = questions[0].question;
+    choicesEl.textContent = questions[0].choices
     // initalize the game 
     // - start button hides
     // - welcome text disapear 
@@ -123,6 +99,7 @@ function startGame() {
     // - text for first question appears
     // - options for question shows
 }
+
 
 function setTime() {
     timerInterval = setInterval(function () {
@@ -135,15 +112,27 @@ function setTime() {
     }, 1000);
 }
 
+function optionClicked() {
+ if(currentQuestionIndex === questions.length){
+   endGame();
+ }  
+ else { 
+    currentQuestionIndex++ 
+    
+ }
+}
 
 
 
 // creat function to stop the game
 function endGame() {
-    clearInterval(timerInterval){
-        // switch to finish page
-    }
+    clearInterval(timerInterval);
+    questionsPage.classList.add("hide");
+    finishPage.classList.remove("hide");
 }
+// if the user reaches the end of the question it calls end game function
+
+
 
 // when the submit button is clicked to submit the final score and initals // 
 startButton.addEventListener("click", startGame)
